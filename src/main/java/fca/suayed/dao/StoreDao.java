@@ -17,7 +17,7 @@ public interface StoreDao {
 
     @SqlUpdate("INSERT INTO productos (nombre, descripcion, precio, cantidad, sku) VALUES(:p.name, :p.description, :p.price, :p.quantity, :p.sku)")
     void addProduct(@BindBean("p") ProductDto productDto);
-    @RegisterBeanMapper(ClientDto.class) // Sirve para mapear los datos de la BD al objeto Java
+    @RegisterBeanMapper(ClientDto.class) 
     @SqlQuery("SELECT * FROM clientes")
     List<ClientDto> getClients();
 
