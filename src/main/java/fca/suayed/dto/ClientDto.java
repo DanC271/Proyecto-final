@@ -1,3 +1,4 @@
+package com.tiempor3al.dto;
 public class ClientDto {
     public int id;
     public String nombre;
