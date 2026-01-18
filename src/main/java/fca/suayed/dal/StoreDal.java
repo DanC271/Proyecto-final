@@ -44,5 +44,12 @@ public class StoreDal {
 
         return responseDto;
     }
-
+    public ResponseDto<List<ClientDto>> getClients() {
+    ResponseDto responseDto = new ResponseDto<List<ClientDto>>();
+    responseDto.setSuccess(true);
+    Jdbi jdbi = jdbiService.getInstance();
+    var clients = jdbi.withExtension(StoreDao.class, dao -> dao.getClients());
+    responseDto.setData(clients);
+    return responseDto;
+}
 }
